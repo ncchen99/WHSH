@@ -1,0 +1,92 @@
+base_url: https://www.whsh.tc.edu.tw/ischool/
+ajax_server: http://localhost:8080/
+
+request_headers:
+  X-Requested-With: XMLHttpRequest
+
+upper_board:
+  focus_board:
+    general:
+      request_url: widget/site_news_tab/news_query_json.php
+      request_method: GET
+      data_type: json
+    query_string_parameters:
+      uid: WID_0_15_90d24f8d1e47d364875349fb4b475f2762dd148c
+      cid: 1
+      maxRows: 6
+
+lower_board:
+  bulletin_board:
+    general:
+      request_url: widget/site_news/news_query_json.php
+      request_method: POST
+      data_type: json
+    query_string_parameters:
+      field: time
+      order: DESC
+      pageNum: 0
+      maxRows: 15
+      keyword:
+      uid: WID_0_2_518cd2a7e52b7f65fc750eded8b99ffcc2a7daca
+      tf: 1
+      auth_type: user
+
+  Honor_deeds:
+    general:
+      request_url: widget/site_news/news_query_json.php
+      request_method: POST
+      data_type: json
+    query_string_parameters:
+      field: time
+      order: DESC
+      pageNum: 0
+      maxRows: 15
+      keyword:
+      uid: WID_0_2_dd4e38ea68852ab77ceca1a4a5666d12a021e423
+      tf: 1
+      auth_type: user
+
+  honor_deeds:
+    general:
+      request_url: widget/site_news/news_query_json.php
+      request_method: POST
+      data_type: json
+    query_string_parameters:
+      field: time
+      order: DESC
+      pageNum: 0
+      maxRows: 15
+      keyword:
+      uid: WID_0_2_dd4e38ea68852ab77ceca1a4a5666d12a021e423
+      tf: 1
+      auth_type: user
+
+  activity_results:
+    general:
+      request_url: widget/site_news/news_query_json.php
+      request_method: POST
+      data_type: json
+    query_string_parameters:
+      field: time
+      order: DESC
+      pageNum: 0
+      maxRows: 15
+      keyword:
+      uid: WID_0_2_fb7c1ce7700cd395278a70e06ddf207e64a0a44a
+      tf: 1
+      auth_type: user
+
+  university_information:
+    general:
+      request_url: widget/site_news/news_query_json.php
+      request_method: POST
+      data_type: json
+    query_string_parameters:
+      field: time
+      order: DESC
+      pageNum: 0
+      maxRows: 15
+      keyword:
+      uid: WID_0_2_05df409a0d479478b152750f285a0a70bac02234
+      tf: 1
+      auth_type: user
