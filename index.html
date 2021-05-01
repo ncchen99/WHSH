@@ -33,6 +33,8 @@ Coded by www.creative-tim.com
   <link href="./assets/css/nucleo-svg.css" rel="stylesheet" />
   <!-- CSS Files -->
   <link href="./assets/css/argon-design-system.css?v=1.2.2" rel="stylesheet" />
+  <link href="./assets/css/loading.css" rel="stylesheet" />
+  <link href="./assets/css/custom.css" rel="stylesheet">
 </head>
 
 <body class="index-page">
@@ -203,11 +205,67 @@ Coded by www.creative-tim.com
     </div>
     <div class="section section-components pb-0" id="section-components">
       <div class="container">
+				<div class="row justify-content-center">
+      
+					<div class="col-xl-12">
+						<!-- Tabs with icons -->
+						<div class="nav-wrapper">
+							<ul class="nav nav-pills nav-fill flex-column flex-md-row" id="tabs-icons-text" role="tablist">
+								<li class="nav-item">
+									<a class="nav-link mb-sm-3 mb-md-0" id="tabs-icons-text-1-tab" data-toggle="tab" href="#tabs-icons-text-1" role="tab" aria-controls="tabs-icons-text-1" aria-selected="true"><i class="ni ni-cloud-upload-96 mr-2"></i>公佈欄</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link mb-sm-3 mb-md-0 active" id="tabs-icons-text-2-tab" data-toggle="tab" href="#tabs-icons-text-2" role="tab" aria-controls="tabs-icons-text-2" aria-selected="false"><i class="ni ni-bell-55 mr-2"></i>Profile</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link mb-sm-3 mb-md-0" id="tabs-icons-text-3-tab" data-toggle="tab" href="#tabs-icons-text-3" role="tab" aria-controls="tabs-icons-text-3" aria-selected="false"><i class="ni ni-calendar-grid-58 mr-2"></i>Messages</a>
+								</li>
+							</ul>
+						</div>
+						<div class="card shadow">
+							<div class="card-body">
+								<div class="tab-content" id="myTabContent">
+									<div class="tab-pane fade" id="tabs-icons-text-1" role="tabpanel" aria-labelledby="tabs-icons-text-1-tab">
+										<div id="news-table-div">
+											<div class="row align-items-center justify-content-center">
+												<div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+											</div>
+										</div>
+									</div>
+									<div class="tab-pane fade active show" id="tabs-icons-text-2" role="tabpanel" aria-labelledby="tabs-icons-text-2-tab">
+										<p class="description">Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
+									</div>
+									<div class="tab-pane fade" id="tabs-icons-text-3" role="tabpanel" aria-labelledby="tabs-icons-text-3-tab">
+										<p class="description">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
 
-      <div class="row">
-        <div class="col-xl-12" id="news-table-div">
-        </div>
-      </div>
+
+				</div>
+
+				<div class="modal fade bd-example-modal-lg" id="news-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+					<div class="modal-dialog modal-lg" role="document">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title" id="news-modal-title"></h5>
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
+							<div class="modal-body" id="news-modal-body">
+								<div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-default">Next</button>
+								<button type="button" class="btn btn-primary">Previous</button>
+							</div>
+						</div>
+					</div>
+				</div>
+
         <div class="row justify-content-center">
           <div class="col-lg-12">
             <!-- Basic elements -->
@@ -950,8 +1008,8 @@ Coded by www.creative-tim.com
       <div class="container">
         <h3 class="h4 text-success font-weight-bold mb-4">Tabs</h4>
           <div class="row justify-content-center">
-            <div class="col-lg-6">
-              <!-- Tabs with icons -->
+            <!--<div class="col-lg-6">
+              Tabs with icons 
               <div class="mb-3">
                 <small class="text-uppercase font-weight-bold">With icons</small>
               </div>
@@ -984,7 +1042,7 @@ Coded by www.creative-tim.com
                   </div>
                 </div>
               </div>
-            </div>
+            </div> -->
             <div class="col-lg-6 mt-5 mt-lg-0">
               <!-- Menu -->
               <div class="mb-3">

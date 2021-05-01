@@ -4,6 +4,24 @@ ajax_server: http://localhost:8080/
 request_headers:
   X-Requested-With: XMLHttpRequest
 
+query_news_content:
+  bulletin_board:
+    general:
+      request_url: widget/site_news/news_query_json_content.php
+      request_method: GET
+      data_type: json
+    query_string_parameters:
+      uid: WID_0_2_518cd2a7e52b7f65fc750eded8b99ffcc2a7daca
+      
+carousel:
+  0:
+    general:
+      request_url: widget/carousel/news_query_json_field.php
+      request_method: POST
+      data_type: json
+    query_string_parameters:
+      uid: WID_0_13_a003a1f72a700af204995b4704ec10e3ecd3c154
+
 upper_board:
   focus_board:
     general:
@@ -28,21 +46,6 @@ lower_board:
       maxRows: 15
       keyword:
       uid: WID_0_2_518cd2a7e52b7f65fc750eded8b99ffcc2a7daca
-      tf: 1
-      auth_type: user
-
-  Honor_deeds:
-    general:
-      request_url: widget/site_news/news_query_json.php
-      request_method: POST
-      data_type: json
-    query_string_parameters:
-      field: time
-      order: DESC
-      pageNum: 0
-      maxRows: 15
-      keyword:
-      uid: WID_0_2_dd4e38ea68852ab77ceca1a4a5666d12a021e423
       tf: 1
       auth_type: user
 
