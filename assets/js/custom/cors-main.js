@@ -106,7 +106,31 @@ class Widget {
           <hr>`;
         }
         innerHTML += decodeURIComponent(response[0]["content"]);
+        // innerHTML = innerHTML.replaceAll(
+        //   "https://www.whsh.tc.edu.tw/",
+        //   "http://localhost:8080/" + "https://www.whsh.tc.edu.tw/"
+        // );
+
         $("#news-modal-body").html(innerHTML);
+        console.log();
+        $("#news-modal-body img").each(function () {
+          $(this).removeAttr("style");
+          $(this).css({ "max-width": "100%", height: "auto" });
+          $.ajax({
+            url: "http://localhost:8080/" + $(this).attr("src"),
+            type: "get",
+            dataType: "html",
+            xhrFields: {
+              withCredentials: true,
+            },
+            async: false,
+            success: function (data, status) {
+              console.log("Status: " + status + "\nData: " + data);
+              /* creating image assuming data is the url of image */
+              $(this).attr("src", "data:image/gif;base64," + data);
+            },
+          });
+        });
       },
       error: function (thrownError) {
         $("#news-modal-title").text("ERROR ：(");
