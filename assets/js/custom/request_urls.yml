@@ -1,5 +1,6 @@
 base_url: https://www.whsh.tc.edu.tw/ischool/
 ajax_server: http://localhost:8080/
+my_server: http://34.125.113.86/whsh/
 
 request_headers:
   X-Requested-With: XMLHttpRequest
@@ -12,7 +13,7 @@ query_news_content:
       data_type: json
     query_string_parameters:
       uid: WID_0_2_518cd2a7e52b7f65fc750eded8b99ffcc2a7daca
-      
+
 carousel:
   0:
     general:
