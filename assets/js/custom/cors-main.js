@@ -83,73 +83,87 @@ class Widget {
       `<div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>`
     );
     $("#news-modal").modal("show");
-    $.ajax({
-      // headers: json_data['request_headers'],
-      type: this.json_data[board][tabs]["general"]["request_method"],
-      url:
-        this.ajax_server +
-        this.base_url +
-        this.json_data[board][tabs]["general"]["request_url"],
-      dataType: this.json_data[board][tabs]["general"]["data_type"],
-      data: {
-        ...this.json_data[board][tabs]["query_string_parameters"],
-        ...{ nid: nid },
-      },
+    (function (widget_this) {
+      $.ajax({
+        // headers: json_data['request_headers'],
+        type: widget_this.json_data[board][tabs]["general"]["request_method"],
+        url:
+          widget_this.ajax_server +
+          widget_this.base_url +
+          widget_this.json_data[board][tabs]["general"]["request_url"],
+        dataType: widget_this.json_data[board][tabs]["general"]["data_type"],
+        data: {
+          ...widget_this.json_data[board][tabs]["query_string_parameters"],
+          ...{ nid: nid },
+        },
 
-      success: function (response) {
-        console.log(response);
-        $("#news-modal-title").text(response[0]["title"]);
-        var innerHTML = "";
-        if (response[0]["attachedfile"] != "[]") {
-          innerHTML += `<h5>附件區</h5>
-          <a href="#" role="button" class="btn btn-link text-primary" title="附件" data-content="Popover body content is set in this attribute.">button</a>
-          <hr>`;
-        }
-        innerHTML += decodeURIComponent(response[0]["content"]);
-        // innerHTML = innerHTML.replaceAll(
-        //   "https://www.whsh.tc.edu.tw/",
-        //   "http://localhost:8080/" + "https://www.whsh.tc.edu.tw/"
-        // );
+        success: function (response) {
+          console.log(response);
+          $("#news-modal-title").text(response[0]["title"]);
+          var innerHTML = "";
+          if (response[0]["attachedfile"] != "[]") {
+            var attachedfile = JSON.parse(response[0]["attachedfile"]);
+            innerHTML += `<h5>附件：　</h5>`;
+            for (var i = 0; i < attachedfile.length; i++) {
+              innerHTML +=
+                `<a href="` +
+                widget_this.json_data["my_server"] +
+                "resources/" +
+                response[0]["uid"] +
+                "/" +
+                response[0]["resources"] +
+                "/attached/" +
+                unescape(attachedfile[i][attachedfile[i].length - 1]) +
+                `" role="button" target="_blank" class="btn btn-link text-primary" title="` +
+                unescape(attachedfile[i][attachedfile[i].length - 1]) +
+                `" data-content="下載">` +
+                unescape(attachedfile[i][attachedfile[i].length - 1]) +
+                `</a>`;
+            }
+            innerHTML += `<hr>`;
+          }
+          innerHTML += decodeURIComponent(response[0]["content"]);
 
-        $("#news-modal-body").html(innerHTML);
-        $("#news-modal-body img").each(function () {
-          $(this).removeAttr("style");
-          $(this).css({ "max-width": "100%", height: "auto" });
-          console.log($(this).attr("src"));
-          $(this).attr(
-            "src",
-            $(this)
-              .attr("src")
-              .replace(
-                "https://www.whsh.tc.edu.tw/ischool/",
-                "http://34.125.113.86/whsh/"
-              )
-          );
-        });
-        //   $.ajax({
-        //     url: "http://localhost:8080/" + $(this).attr("src"),
-        //     type: "get",
-        //     dataType: "html",
-        //     xhrFields: {
-        //       withCredentials: true,
-        //     },
-        //     async: false,
-        //     success: function (data, status) {
-        //       console.log("Status: " + status + "\nData: " + data);
-        //       /* creating image assuming data is the url of image */
-        //       $(this).attr("src", "data:image/gif;base64," + data);
-        //     },
-        //   });
-      },
-      error: function (thrownError) {
-        $("#news-modal-title").text("ERROR ：(");
-        $("#news-modal-body")
-          .html(`<div class="alert alert-danger" role="alert">
-        ERROR :(
-        </div>`);
-        console.log(thrownError);
-      },
-    });
+          $("#news-modal-body").html(innerHTML);
+          $("#news-modal-body img").each(function () {
+            $(this).removeAttr("style");
+            $(this).css({ "max-width": "100%", height: "auto" });
+            console.log($(this).attr("src"));
+            $(this).attr(
+              "src",
+              $(this)
+                .attr("src")
+                .replace(
+                  widget_this.base_url,
+                  widget_this.json_data["my_server"]
+                )
+            );
+          });
+          //   $.ajax({
+          //     url: "http://localhost:8080/" + $(this).attr("src"),
+          //     type: "get",
+          //     dataType: "html",
+          //     xhrFields: {
+          //       withCredentials: true,
+          //     },
+          //     async: false,
+          //     success: function (data, status) {
+          //       console.log("Status: " + status + "\nData: " + data);
+          //       /* creating image assuming data is the url of image */
+          //       $(this).attr("src", "data:image/gif;base64," + data);
+          //     },
+          //   });
+        },
+        error: function (thrownError) {
+          $("#news-modal-title").text("ERROR ：(");
+          $("#news-modal-body")
+            .html(`<div class="alert alert-danger" role="alert">
+          ERROR :(
+          </div>`);
+          console.log(thrownError);
+        },
+      });
+    })(this);
   }
 }
 
