@@ -1,5 +1,5 @@
 base_url: https://www.whsh.tc.edu.tw/ischool/
-ajax_server: http://localhost:8080/
+ajax_server: http://34.125.113.86:8080/
 my_server: http://34.125.113.86/whsh/
 
 request_headers:
