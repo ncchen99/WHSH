@@ -1,6 +1,6 @@
 base_url: https://www.whsh.tc.edu.tw/ischool/
-ajax_server: https://ncc.zapto.org:8080/
-my_server: http://34.125.113.86/whsh/
+ajax_server: https://ncchen.tk:8080/
+my_server: https://ncchen.tk/
 
 request_headers:
   X-Requested-With: XMLHttpRequest
