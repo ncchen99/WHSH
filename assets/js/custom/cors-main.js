@@ -58,7 +58,7 @@ class Widget {
             '<a href="javascript:void(0)" onclick="widget.query_news_content(';
           tr += row["newsId"] + ", ";
           tr +=
-            "'" + tabs + "'" + ')" class="btn btn-link text-primary news-btn">';
+            "'" + tabs + "'" + ')" class="btn btn-link news-btn text-primary">';
           if (row["top"] == 1) {
             tr += '<span class="badge badge-pill badge-danger">HOT</span>';
           }
