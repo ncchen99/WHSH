@@ -1,0 +1,24 @@
+入學與升學:
+  icon: fa fa-graduation-cap
+  li:
+    生大學資訊:
+      icon: fa fa-graduation-cap
+      href:
+    生大學榜單:
+      icon: fa fa-list
+      href:
+行政單位:
+  icon: fa fa-briefcase
+  li:
+    設備組:
+      icon:
+      href:
+    社團活動組:
+      icon:
+      href:
+線上服務:
+  icon:
+  li:
+    資訊設備報修:
+      icon:
+      href:

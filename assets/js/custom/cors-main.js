@@ -39,10 +39,10 @@ class Widget {
            </table>`);
         var innerHTML = `<thead>
           <tr>
-            <th class="text-center">時間</th>
-            <th>單位</th>
-            <th>標題</th>
-            <th>點閱</th>
+            <th class="text-center" style="width: 50px;">時間</th>
+            <th class="text-center" style="width: 100px;">單位</th>
+            <th class="text-center">標題</th>
+            <th class="text-center" style="width: 30px;">點閱</th>
           </tr>
           </thead>
           <tbody>
@@ -51,8 +51,8 @@ class Widget {
         response.shift();
         for (const row of response) {
           var tr = "<tr>";
-          tr += "<td>" + row["time"] + "</td>";
-          tr += "<td>" + row["unit_name"] + "</td>";
+          tr += '<td class="text-center">' + row["time"] + "</td>";
+          tr += '<td class="text-center">' + row["unit_name"] + "</td>";
           tr += "<td>";
           tr +=
             '<a href="javascript:void(0)" onclick="widget.query_news_content(';
@@ -63,7 +63,7 @@ class Widget {
             tr += '<span class="badge badge-pill badge-danger">HOT</span>';
           }
           tr += " " + row["title"] + "</a>" + "</td>";
-          tr += "<td>" + row["clicks"] + "</td>";
+          tr += '<td class="text-center">' + row["clicks"] + "</td>";
           tr += "</tr>";
           $("#news-table > tbody").append(tr);
         }
