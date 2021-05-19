@@ -34,17 +34,13 @@ Coded by www.creative-tim.com
   <meta property="twitter:title" content="文華高中｜電研站">
   <meta property="twitter:description" content="文華高中非官方網頁🐸由高三同學製作🌞主要只有查詢公佈欄ㄉ功能🐛">
   <meta property="twitter:image" content="./assets/img/meta/meta-img.png">
-
-  <title>文華高中 - 電研站</title>
   
   <link rel="apple-touch-icon" sizes="76x76" href="./assets/img/whsh-logo.png">
   <link rel="icon" type="image/png" href="./assets/img/whsh-logo.png">
-  <title>
-    文華高中 
-  </title>
+  <title>文華高中｜電研站</title>
   <!--     Fonts and icons     -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
-  <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
   <!-- Nucleo Icons -->
   <link href="./assets/css/nucleo-icons.css" rel="stylesheet" />
   <link href="./assets/css/nucleo-svg.css" rel="stylesheet" />
@@ -83,8 +79,8 @@ Coded by www.creative-tim.com
             </div>
           </div>
         </div>
-        <ul class="navbar-nav navbar-nav-hover align-items-lg-center">
-          <li class="nav-item dropdown">
+        <ul class="navbar-nav navbar-nav-hover align-items-lg-center" id="navbar_content">
+          <!--<li class="nav-item dropdown">
             <a href="#" class="nav-link" data-toggle="dropdown" href="#" role="button">
               <i class="ni ni-ui-04 d-lg-none"></i>
               <span class="nav-link-inner--text">Components</span>
@@ -132,7 +128,7 @@ Coded by www.creative-tim.com
               <a href="./examples/login.html" class="dropdown-item">Login</a>
               <a href="./examples/register.html" class="dropdown-item">Register</a>
             </div>
-          </li>
+          </li>-->
         </ul>
         <ul class="navbar-nav align-items-lg-center ml-lg-auto">
           <li class="nav-item">
@@ -162,7 +158,8 @@ Coded by www.creative-tim.com
           
           <li class="nav-item">
             <a class="btn btn-outline-primary" href="https://www.whsh.tc.edu.tw" target="_blank">
-              <span class="nav-link-inner--text">原本的網頁</span>
+              <i class="fas fa-globe-americas"></i>
+              <span class="nav-link-inner--text">官網</span>
             </a>
           </li>
           <!--<li class="nav-item d-none d-lg-block">
@@ -269,8 +266,6 @@ Coded by www.creative-tim.com
 							</div>
 						</div>
 					</div>
-
-
 				</div>
 
 				<div class="modal fade bd-example-modal-xl" id="news-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
@@ -286,9 +281,15 @@ Coded by www.creative-tim.com
 								<div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
 							</div>
 							<div class="modal-footer">
-								<button type="button" class="btn btn-default">上一則</button>
-								<button type="button" class="btn btn-primary ml-3">下一則</button>
-                <button type="button" class="btn btn-link  ml-auto" data-dismiss="modal">關閉</button>
+								<button type="button" class="btn btn-default">
+                  <i class="fas fa-chevron-left"></i>
+                  上一則
+                </button>
+								<button type="button" class="btn btn-primary ml-3">
+                下一則&nbsp<i class="fas fa-chevron-right"></i>
+                </button>
+                <button type="button" class="btn btn-secondary  ml-auto" data-dismiss="modal">
+                <i class="fas fa-times"></i>&nbsp&nbsp關閉</button>
 							</div>
 						</div>
 					</div>

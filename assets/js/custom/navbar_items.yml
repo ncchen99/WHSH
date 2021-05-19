@@ -1,24 +1,58 @@
-入學與升學:
+升學資訊:
   icon: fa fa-graduation-cap
   li:
     生大學資訊:
       icon: fa fa-graduation-cap
-      href:
+      href: https://www.whsh.tc.edu.tw/ischool/publish_page/0?cid=1278
     生大學榜單:
       icon: fa fa-list
-      href:
+      href: https://univ.whsh.tc.edu.tw/
 行政單位:
   icon: fa fa-briefcase
   li:
     設備組:
-      icon:
-      href:
+      icon: fas fa-cogs
+      href: https://www.whsh.tc.edu.tw/ischool/publish_page/6/
     社團活動組:
-      icon:
-      href:
+      icon: fas fa-users
+      href: https://www.whsh.tc.edu.tw/ischool/publish_page/235
 線上服務:
-  icon:
+  icon: fas fa-wifi
   li:
     資訊設備報修:
-      icon:
-      href:
+      icon: fas fa-laptop-medical
+      href: https://help.whsh.tc.edu.tw/
+    大學備審資料:
+      icon: fas fa-database
+      href: http://203.68.192.35/elr/
+常用功能:
+  icon: fas fa-user-plus
+  li:
+    學校行事曆:
+      icon: fas fa-calendar-alt
+      href: https://www.whsh.tc.edu.tw/ischool/widget/main_menu/show.php?id=37318
+      color: orange
+    課表查詢:
+      icon: fas fa-book
+      href: https://class.whsh.tc.edu.tw/109-2/classTable.asp
+      color: yellow
+    成績查詢:
+      icon: fas fa-pen
+      href: https://web2.ischool.com.tw/?school=whsh.tc.edu.tw
+      color: red
+    處室分機:
+      icon: fas fa-phone
+      href: https://www.whsh.tc.edu.tw/ischool/publish_page/0/?cid=37429
+      color: green
+    電子郵件:
+      icon: fas fa-envelope-square
+      href: http://email.whsh.tc.edu.tw/
+      color: blue
+    維修登記:
+      icon: fas fa-tools
+      href: https://help.whsh.tc.edu.tw/
+      color: teal
+    場地預約:
+      icon: fas fa-edit
+      href: https://www.whsh.tc.edu.tw/ischool/public/reservation/index.php?bid=0
+      color: danger

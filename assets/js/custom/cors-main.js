@@ -1,4 +1,5 @@
-const file_url = "./assets/js/custom/request_urls.yml";
+const request_urls_file_path = "./assets/js/custom/request_urls.yml";
+const navbar_items_file_path = "./assets/js/custom/navbar_items.yml";
 
 function get_data(file_url) {
   var result;
@@ -21,6 +22,38 @@ class Widget {
     this.ajax_server = this.json_data["ajax_server"];
   }
 
+  generate_navbar(file_url) {
+    var navbar_items = jsyaml.load(get_data(file_url));
+    var innerHTML = "";
+    for (var li in navbar_items) {
+      innerHTML +=
+        `<li class="nav-item dropdown">
+          <a href="#" class="nav-link" data-toggle="dropdown" role="button">
+            <i class="` +
+        navbar_items[li]["icon"] +
+        `"></i>
+            <span class="nav-link-inner--text">` +
+        li +
+        `</span>
+          </a>`;
+      innerHTML += `<div class="dropdown-menu">`;
+      var lis = navbar_items[li]["li"];
+      for (var item in lis) {
+        innerHTML +=
+          `<a href="` +
+          lis[item]["href"] +
+          `" class="dropdown-item" target="_blank">` +
+          `<i class="` +
+          lis[item]["icon"] +
+          `"`;
+        if ("color" in lis[item])
+          innerHTML += `style="color: ` + lis[item]["color"] + `"`;
+        innerHTML += `></i>` + `<span>` + item + `</span>` + `</a> `;
+      }
+      innerHTML += `</div></li>`;
+    }
+    $("#navbar_content").html(innerHTML);
+  }
   query_news(board, tabs) {
     $.ajax({
       // headers: json_data['request_headers'],
@@ -174,7 +207,8 @@ var tabs = "bulletin_board";
 (function () {
   "use strict";
   $(document).ready(function () {
-    widget = new Widget(file_url);
+    widget = new Widget(request_urls_file_path);
+    widget.generate_navbar(navbar_items_file_path);
     widget.query_news(board, tabs);
   });
 })();
